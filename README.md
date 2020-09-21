@@ -33,27 +33,19 @@ $ php bin/console doctrine:migrations:migrate
 
 7. Here is an example of JSON 
 
+
 {
-
   "title": "Answer title",
-
   "promoted": true,
-
   "status": "published",
-
   "answers": [
-
   	{
-
   		"channel": "bot",
-
   		"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-
   	}
-
   ]
-  
 }
+
 
 8. To test POST use the route /question
 
