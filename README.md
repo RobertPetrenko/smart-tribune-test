@@ -9,30 +9,29 @@ https://github.com/RobertPetrenko/smart-tribune-test.git
 
 2. Run composer install
 
-$ composer install
+  `$ composer install`
 
 3. Create .env.local in the root of the project and use this variables
 
-APP_ENV=dev
+  `APP_ENV=dev`
 
-APP_SECRET=...
+  `APP_SECRET=...`
 
-DATABASE_URL=mysql://user:pwd@server/questionanswer?serverVersion=...
+  `DATABASE_URL=mysql://user:pwd@server/questionanswer?serverVersion=...`
 
 4. Create database
 
-$ php bin/console doctrine:database:create
+  `$ php bin/console doctrine:database:create`
 
 5. Make migration
 
-$ php bin/console make:migration
+  `$ php bin/console make:migration`
 
-$ php bin/console doctrine:migrations:migrate
+  `$ php bin/console doctrine:migrations:migrate`
 
 6. To test the API use HTTP client
 
 7. Here is an example of JSON 
-
 
 {
   "title": "Answer title",
@@ -45,7 +44,6 @@ $ php bin/console doctrine:migrations:migrate
   	}
   ]
 }
-
 
 8. To test POST use the route /question
 
