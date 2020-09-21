@@ -1,48 +1,57 @@
 # Smart Tribune - Backend - Coding Test
 
-## Instalation.
+## Setup
 
-1. Clone or download repository
+1. Clone this repository
 
-   - https://github.com/RobertPetrenko/smart-tribune-test.git
+ ```shell
+ git clone git@github.com:RobertPetrenko/smart-tribune-test.git
+ ```
 
-***
+2. Install dependencies
 
-2. Run composer install
+```shell
+composer install
+```
 
-   - `$ composer install`
+3. Create env file
 
-  ***
+Create a .env.local file in the root folder of the project and with these variables:
 
-3. Create .env.local in the root of the project and use this variables
+```dotenv
+APP_ENV=dev
+APP_SECRET=...
+DATABASE_URL=mysql://user:password@host/questionanswer?serverVersion=...
+```
 
-   - `APP_ENV=dev`
+4. Create the database
 
-   - `APP_SECRET=...`
+```shell
+php bin/console doctrine:database:create
+```
 
-   - `DATABASE_URL=mysql://user:pwd@server/questionanswer?serverVersion=...`
+5. Create and execute the migration
 
-  ***
+```shell
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+```
 
-4. Create database
+6. Start the server
 
-   - `$ php bin/console doctrine:database:create`
+You can use Symfony web server for example or PHP built-in server.
 
-  ***
+## Usage
 
-5. Make migration
+### Create a question with answers
 
-   - `$ php bin/console make:migration`
+```curl
+POST /question
+Content-Type: application/json
+Accept: application/json
+```
 
-   - `$ php bin/console doctrine:migrations:migrate`
-
-  ***
-
-6. To test the API use HTTP client
-
-***
-
-7. Here is an example of JSON 
+Content example:
 
 ```json
 {
@@ -50,18 +59,26 @@
   "promoted": true,
   "status": "published",
   "answers": [
-  	{
-  		"channel": "bot",
-  		"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  	}
+    {
+      "channel": "bot",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }
   ]
 }
-````
+```
 
-***
+### Update the title of a question
 
-8. To test POST use the route /question
+```curl
+PUT /question/{questionId}
+Content-Type: application/json
+Accept: application/json
+```
 
-***
+Content example:
 
-9. To test PUT use the route /question/{id}
+```json
+{
+  "title": "Updated title",
+}
+```
