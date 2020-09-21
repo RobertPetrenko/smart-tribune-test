@@ -33,6 +33,7 @@ https://github.com/RobertPetrenko/smart-tribune-test.git
 
 7. Here is an example of JSON 
 
+```json
 {
   "title": "Answer title",
   "promoted": true,
@@ -44,6 +45,7 @@ https://github.com/RobertPetrenko/smart-tribune-test.git
   	}
   ]
 }
+````
 
 8. To test POST use the route /question
 
