@@ -1,7 +1,7 @@
 # smart-tribune-test
 # Smart Tribune - Backend - Coding Test
 
-Instalation.
+## Instalation.
 
 1. Clone or download repository
 
